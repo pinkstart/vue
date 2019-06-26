@@ -10,8 +10,11 @@
 
 <body>
     <div id="hxk">
+        <!-- 填充纯文本，没有闪动问题 -->
         <div v-text='msg'></div>
+        <!-- 填充html片段，存在安全隐患网站内部可以使用 -->
         <div v-html='msg'></div>
+        <!-- 填充原始部分，显示原始信息，跳过编译片段 -->
         <div v-pre>{{ msg }}</div>
     </div>
 

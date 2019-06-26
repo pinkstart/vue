@@ -10,18 +10,18 @@
 
 <body>
     <div id="app">
-        <div>{{ msg }}</div>
-        <div>
-            <input type="text" v-model='msg'>
-        </div>
+        <a href="url">跳转</a>
+        <a href="url">跳转1</a>
     </div>
+
+
 
     <script src="./vue.js"></script>
     <script>
-        const nd = new Vue({
+        var vm = new Vue({
             el: '#app',
             data: {
-                msg: 'hello vue'
+                url: 'http://www.baidu.com'
             }
         })
     </script>

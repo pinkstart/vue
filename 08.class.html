@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid blue;
+            height: 200px;
+            width: 100px;
+        }
+        
+        .error {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="zx">
+        <div v-bind:class="{box: isBox, error: isError}"></div>
+        <button @click='hxk'>切换</button>
+    </div>
+
+
+    <script src="./vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#zx',
+            data: {
+                isBox: true,
+                isError: true
+            },
+            methods: {
+                hxk() {
+                    this.isBox = !this.isBox;
+                    this.isError = !this.isError;
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

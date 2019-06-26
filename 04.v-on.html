@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="app">
+        {{ num }}
+        <button @click='log'>点击</button>
+        <button @click='one(2, $event)'>按两下</button>
+        <button v-on:click='one(3, $event)'>按三下</button> -->
+    <!-- 阻止事件冒泡行为 -->
+    <!-- <a href="#" v-on:click.stop=''></a>
+    </div> -->
+
+
+    <!-- <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+            methods: {
+                log(e) {
+                    console.log(e);
+                    this.num++;
+                },
+                one(step, e) {
+                    console.log(e.target);
+
+                    this.num += step;
+                }
+            }
+        })
+    </script> -->
+
+
+    <div id="app">
+        <div>{{ num }}</div>
+        <button @click='a'>按钮1</button>
+        <button @click='b(2, $event)'>按钮2</button>
+    </div>
+
+
+    <script src="./vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+            methods: {
+                a(e) {
+                    console.log(e.target);
+
+                    this.num++;
+                },
+                b(step, e) {
+                    console.log(e.target.innerHTML);
+
+                    this.num += (step)
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>

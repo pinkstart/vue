@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="zx">
+        <!-- 阻止事件冒泡 -->
+        <div> {{ num }} </div>
+        <div v-on:click='one'>
+            <button v-on:click.stop='two'>点击</button>
+        </div>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#zx',
+            data: {
+                num: 0
+            },
+            methods: {
+                one() {
+                    this.num++;
+                },
+                two() {
+                    console.log(123)
+                        // this.num++;
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
