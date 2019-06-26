@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    <!-- 引入v-cloak是为了解决插值表达式的闪动问题 -->
+</head>
+
+<body>
+    <div id="app">
+        <div v-cloak>{{ msg }} {{ name }} {{ like }}</div>
+        <div v-cloak>{{ 2 + 3 }}</div>
+        <div v-cloak>{{ msg + '-----' + 2 }}</div>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+        const nd = new Vue({
+            el: '#app',
+            // data: {
+            //     msg: 'hello vue'
+            // }
+            data: {
+                msg: 'hello vue',
+                name: 'hxk',
+                like: 'zx'
+            }
+        })
+    </script>
+</body>
+
+</html>
